@@ -1,0 +1,19 @@
+### RestController
+
+- This annotation is used to add the @ResponseBody and @Controller annotation to the class
+- To use this annotation, you have to import org.springframework.web.bind.annotation.RestController;
+
+
+```java
+package com.edureka; 
+import org.springframework.web.bind.annotation.RequestMapping; 
+import org.springframework.web.bind.annotation.RestController; 
+
+@RestController 
+public class SampleController { 
+    @RequestMapping("/example") 
+    public String example() { 
+        return"Welcome To Edureka"; 
+    } 
+} 
+```

@@ -1,0 +1,63 @@
+## Java Inner Classes
+In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.
+
+To access the inner class, create an object of the outer class, and then create an object of the inner class:
+```java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+  }
+}
+```
+- Private Inner Class
+
+Unlike a "regular" class, an inner class can be private or protected. If you don't want outside objects to access the inner class, declare the class as private:
+
+
+## Static inner class
+In Java, a static inner class, also known as a nested static class, is a class declared within another class and marked with the static keyword. Here's a breakdown of the key points about static inner classes:
+
+- **Definition**: A static inner class is a nested class that is declared with the static modifier. It is associated with its outer class but does not have an implicit reference to an instance of the outer class.
+
+- **Accessing Outer Class Members**: Since a static inner class is not associated with any instance of the outer class, it cannot directly access non-static members (fields or methods) of the outer class. However, it can access static members of the outer class.
+
+- **Instantiation**: Unlike non-static inner classes, which require an instance of the outer class for instantiation, static inner classes can be instantiated independently of any instances of the outer class.
+
+- **Visibility**: The members of a static inner class (fields, methods, constructors) can have any access modifiers (public, protected, package-private, private) just like any other class members. However, if the inner class is declared private, it can only be accessed within the outer class.
+
+- **Usage Scenarios**:
+
+Grouping related classes: Static inner classes are often used to group closely related classes together within a single outer class.
+Improved encapsulation: When the inner class is only relevant to the outer class and does not need access to its instance variables, using a static inner class can improve encapsulation.
+Providing a helper class: Static inner classes are commonly used to provide helper functionality to the outer class without exposing it to the outside world.
+
+Example:
+```java
+public class OuterClass {
+    private static int outerStaticField = 10;
+    
+    static class StaticInnerClass {
+        private int innerField;
+        
+        public StaticInnerClass(int innerField) {
+            this.innerField = innerField;
+        }
+        
+        public void display() {
+            System.out.println("Outer static field: " + outerStaticField);
+            System.out.println("Inner field: " + innerField);
+        }
+    }
+    
+    public static void main(String[] args) {
+        OuterClass.StaticInnerClass innerObj = new OuterClass.StaticInnerClass(20);
+        innerObj.display();
+    }
+}
+```
+- Access Outer Class From Inner Class
+
+One advantage of inner classes, is that they can access attributes and methods of the outer class:
+
