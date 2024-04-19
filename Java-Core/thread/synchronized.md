@@ -8,7 +8,6 @@ Synchronization can be achieved in three ways:
 - Synchronizing a method
 ``` java
 class Printer {
-
    synchronized void print(List<String> wordsToPrint) {
        wordsToPrint.forEach(System.out::print);
        System.out.println();
