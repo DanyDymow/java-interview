@@ -2,6 +2,10 @@
 It is an acronym that represents a set of five design principles for writing maintainable and scalable software. These principles were introduced by Robert C. Martin and have become fundamental guidelines for object-oriented programming and software architecture. The SOLID principles are meant to improve code quality, maintainability, and extensibility.
 Here are the five SOLID principles:
 
+DRY - dont repeat yourself
+KISS - Keep it simple simon
+YAGNI - You Aren't Gonna Need It
+
 ### Single Responsibility Principle (SRP): (one type logic for class)
 
 The SRP states that a class should have only one reason to change, meaning it should have a single responsibility or job.
