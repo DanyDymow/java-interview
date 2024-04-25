@@ -196,6 +196,124 @@ UTF-8 по умолчанию
 Если вы пытались, например, читать файлы без явного указания окончания символов, то в предыдущих версиях Java использовалась кодировка операционной системы (например, UTF-8 в Linux и macOS и Windows-1252 в Windows). В Java 18 она изменилась на UTF-8 по умолчанию.
 
 ## - Java 19 -
-В Java 19 добавлено несколько интересных функций, таких как Virtual Threads и новый Foreign Function & Memory API, а также структурированный параллелизм и Vector API, но все они находятся в режиме предварительного просмотра, поэтому могут быть изменены в следующих релизах.
+В Java 19 добавлено несколько интересных функций, таких как Virtual Threads (preview) и новый Foreign Function & Memory API, а также структурированный параллелизм и Vector API, но все они находятся в режиме предварительного просмотра, поэтому могут быть изменены в следующих релизах.
+
+
+## - Java 21 -
+
+- Pattern Matching for switch (JEP 441)
+
+Паттерн-матчинг для switch наконец-то был финализирован и стал стабильной конструкцией языка. Напомним, что он появился в Java 17 и был в состоянии preview четыре релиза: 17, 18, 19 и 20.
+Новый паттерн-матчинг существенно расширяет возможности оператора switch. Начиная с Java 1.0, switch поддерживал только сравнение с примитивными константами. Позже список типов был расширен (Java 5 – перечисления, Java 7 – строки), но в ветках case всё ещё могли быть только константы.
+
+```java
+Object obj = …
+return switch (obj) {
+    case Integer i when i > 0 -> String.format("positive int %d", i);
+    case Integer i -> String.format("int %d", i);
+    case String s -> String.format("String %s", s);
+    case null -> System.out.println("Null");
+    default -> obj.toString();
+};
+```
+
+- Record Patterns (JEP 440)
+
+Отдельным видом паттернов являются паттерны записей. Они появились в Java 19 в режиме preview и стали стабильными в Java 21.
+Паттерны записей позволяют осуществлять деконструкцию значений записей чрезвычайно компактно:
+```java
+record Point(int x, int y) {}
+
+static void printSum(Object obj) {
+    if (obj instanceof Point(int x, int y)) {
+        System.out.println(x + y);
+    }
+}
+```
+
+Или через оператор switch:
+```java
+static void printSum(Object obj) {
+    switch (obj) {
+        case Point(int x, int y) -> System.out.println(x + y);
+        default -> System.out.println("Not a point");
+    }
+}
+```
+
+
+- String Templates (Preview)
+
+Строковые шаблоны – новая синтаксическая возможность, позволяющая встраивать в строки выражения:
+
+```java
+int x = 10;
+int y = 20;
+String str = STR."\{x} plus \{y} equals \{x + y}";
+```
+
+
+- Unnamed Patterns and Variables (Preview) (JEP 443)
+
+Ещё одно новшество в режиме preview: теперь можно объявлять так называемые безымянные переменные и паттерны. Делается это с помощью символа подчеркивания (_). Это часто необходимо, когда переменная или паттерн не используются:
+
+```java
+int acc = 0;
+for (Order _ : orders) {
+    if (acc < LIMIT) {
+        … acc++ …
+    }
+}
+```
+Довольно частый пример нужности безымянных переменных – блок catch с неиспользуемым исключением:
+
+```java
+String s = …
+try {
+    int i = Integer.parseInt(s);
+    …
+} catch (NumberFormatException _) {
+    System.out.println("Bad number: " + s);
+}
+```
+
+
+- Unnamed Classes and Instance Main Methods (Preview) (JEP 445)
+
+Теперь в режиме preview можно запускать программы с методами main(), которые не являются public static и у которых нет параметра String[] args:
+
+```java
+class HelloWorld {
+    void main() {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+В таком случае JVM сама создаст экземпляр класса (у него должен быть не-private конструктор без параметров) и вызовет у него метод main().
+Протокол запуска будет выбирать метод main() согласно следующему приоритету:
+
+```java
+static void main(String[] args)
+static void main()
+void main(String[] args)
+void main()
+
+//Кроме того, можно писать программы и без объявления класса вовсе:
+
+
+String greeting = "Hello, World!";
+
+void main() {
+    System.out.println(greeting);
+}
+```
+
+- Sequenced Collections (JEP 431)
+
+Появились три новых интерфейса SequencedCollection, SequencedSet и SequencedMap.
+
+
+SequencedCollection является наследником Collection и представляет собой коллекцию с установленным порядком элементов. Такими коллекциями являются LinkedHashSet и все реализации List, SortedSet и Deque. У этих коллекций есть общее свойство последовательности элементов, но до Java 21 их общим родителем был Collection, который является слишком общим интерфейсом и не содержит многих методов, характерных для последовательностей (getFirst(), getLast(), addFirst(), addLast(), reversed() и т.д). При этом у самих вышеописанных коллекций такие методы были несогласованны друг с другом (например, list.get(0) против sortedSet.first() против deque.getFirst()), либо вовсе отсутствовали (например, linkedHashSet.getLast()).
 
 

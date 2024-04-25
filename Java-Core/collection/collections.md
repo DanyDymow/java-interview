@@ -23,6 +23,10 @@ public class MyClass{
 
 **LinkedList** provides fast insertions and deletions but slower element access.
 
+![Alt текст](/img/collections/collections-time.png)
+
+
+
 ### Sorting and Searching:
 
 The Java Collections Framework provides methods for sorting collections using the Comparable and **Comparator** interfaces. You can also search for elements using methods like **contains**, **indexOf**, and **binarySearch**.
