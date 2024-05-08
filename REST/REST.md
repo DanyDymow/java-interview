@@ -1,5 +1,8 @@
 ## REST 
 
+Что такое REST API?
+REST — буквально «передача самоописываемого состояния», стиль взаимодействия распределенного приложения в сети. REST API — набор функций для создания и выполнения запросов и получения ответов по HTTP
+
 (Representational State Transfer) is an architectural style for designing networked applications, particularly web services. REST is characterized by a set of constraints and principles that guide the design of distributed systems, making them scalable, maintainable, and easy to understand.
 
 ## Key Principles and Constraints of REST:
