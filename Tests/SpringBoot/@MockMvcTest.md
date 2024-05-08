@@ -1,0 +1,34 @@
+## Аннотация @MockMvcTest 
+является частью Spring Framework и используется в тестировании контроллеров веб-приложений. Она предназначена для создания интеграционных тестов MVC-контроллеров. Вот основные моменты, которые стоит знать о ней:
+
+- Цель: @MockMvcTest позволяет настроить интеграционные тесты на MVC-контроллеры в Spring. Она создает среду, в которой можно тестировать контроллеры без реального запуска веб-сервера.
+- Использование: Вы можете применять аннотацию @MockMvcTest к вашим классам тестов. При этом указывается класс контроллера, который нужно протестировать.
+- Зависимости: Для использования @MockMvcTest необходимо включить зависимость на spring-boot-starter-test, которая содержит необходимые библиотеки для тестирования Spring Boot.
+- Компоненты тестирования: @MockMvcTest автоматически создает экземпляр MockMvc, который можно использовать для выполнения HTTP-запросов к контроллеру.
+- Автоматическая настройка: Spring Boot автоматически сканирует классы контроллеров и их зависимости, чтобы настроить тестовую среду. Однако, если вам нужно заменить какие-то компоненты реальными или мокированными объектами, это можно сделать с помощью дополнительных аннотаций.
+
+Пример использования:
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+public class MyControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    public void testMyController() throws Exception {
+        mockMvc.perform(get("/api/myendpoint"))
+                .andExpect(status().isOk());
+    }
+}
+```

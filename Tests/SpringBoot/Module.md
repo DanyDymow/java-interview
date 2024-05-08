@@ -1,4 +1,6 @@
-Что входит в контекст Spring Test: @Controller, @ControllerAdvice, @JsonComponent, Converter, Filter,WebMvcConfigurer
+Что входит в контекст Spring Test: @Controller, @ControllerAdvice, @JsonComponent, Converter, Filter, WebMvcConfigurer
+
+Обычно вы имитируете любой зависимый компонент конечной точки вашего контроллера, используя @MockBean.
 
 ```java
 @WebMvcTest(ShoppingCartController.class)
