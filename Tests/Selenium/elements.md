@@ -1,4 +1,4 @@
-## Как вы найдете элемент, используя Selenium?
+## Selenium elements?
 In Selenium каждый объект или элемент управления на веб-странице называется элементом. Существуют разные способы найти элемент на веб-странице.
 
 ID
@@ -9,3 +9,41 @@ CSS
 Текст ссылки
 Частичный текст ссылки
 Xpath и т. д.
+
+
+
+Вот примеры поиска элементов в Selenium WebDriver с использованием различных методов:
+
+Поиск по ID:
+```java
+WebElement elementById = driver.findElement(By.id("elementId"));
+```
+Поиск по тегу:
+```java 
+WebElement elementByTag = driver.findElement(By.tagName("tagname"));
+```
+Поиск по атрибуту:
+
+```java 
+WebElement elementByAttribute = driver.findElement(By.cssSelector("[attributeName='value']"));
+```
+Поиск по CSS-селектору:
+
+```java 
+WebElement elementByCssSelector = driver.findElement(By.cssSelector("cssSelector"));
+```
+Поиск по тексту ссылки:
+
+```java 
+WebElement elementByLinkText = driver.findElement(By.linkText("linkText"));
+```
+Поиск по частичному тексту ссылки:
+
+```java 
+WebElement elementByPartialLinkText = driver.findElement(By.partialLinkText("partialLinkText"));
+```
+Поиск по XPath:
+
+```java 
+WebElement elementByXPath = driver.findElement(By.xpath("xpathExpression"));
+```
