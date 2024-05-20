@@ -1,6 +1,3 @@
-- Page Object Model(Pattern)
-The Page Object Model is a widely used object design pattern for structuring automation test code. Here, pages in the app are represented as Classes, and various UI elements of that pages are defined as variables. We already have gone through this technique in detail previously, so here we will discuss the abstract structure and explore how it can be implemented in a slightly different way or in a different programming language.
-
 - Factory Design Pattern:
 In the factory design pattern we have a super class with multiple subclasses and based on some input, we need to return a particular subclass. It is often used when a class cannot anticipate the type of objects it needs to create beforehand. Here, instantiation of a class is done from the factory class. So when we need to create the object based on particular input this pattern is used. So does it related to automation test design?This design pattern is best suited to when you are working with Android and iOS and both having the same accessibility id on iOS and content-desc in Android. So here the Factory class will create the relevant driver object (either Android or iOS) and always returns a newly created object or re-initialized one, so you don’t have to check the platform every time.
 
