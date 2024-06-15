@@ -1,0 +1,19 @@
+## @Order
+
+Еще одна часто встречающаяся аннотация – @TestMethodOrder. Она позволяет задать порядок вызова тестовых методов в тестовом классе. Бывает очень полезна, когда вы знаете, что вызовы методов влияют друг на друга, но при определенном порядке все должно работать, как нужно. Используется довольно часто.
+
+```java
+@TestMethodOrder(OrderAnnotation.class)
+public class OrderAnnotationUnitTest {
+
+    @Test
+    @Order(1)
+    public void firstTest() {
+    }
+
+    @Test
+    @Order(2)
+    public void secondTest() {
+    }
+}
+````

@@ -1,0 +1,25 @@
+## SpringBootTest
+
+When you annotate a test class with @SpringBootTest, Spring Boot initializes the application context and loads all the beans that are defined in your application. This means it sets up your application in a way that closely resembles how it runs in a real production environment, including components like controllers, services, repositories, and so on.
+
+Here are some key points about @SpringBootTest:
+
+- Integration Testing: It's mainly used for integration testing rather than unit testing. It allows you to test your Spring Boot application in a more holistic manner, where components interact with each other as they would in a live environment.
+
+- ApplicationContext Loading: The annotation triggers the loading of the entire application context. This means it loads all the beans and their dependencies, configures the environment, and sets up everything as it would be during runtime.
+
+- Random Port Allocation: By default, @SpringBootTest starts the application on a random port. This is helpful when you have multiple tests running in parallel to avoid port conflicts.
+
+- Customization: You can customize the behavior of @SpringBootTest using its various attributes. For example, you can specify the configuration classes to use (classes attribute), whether to start the web environment (webEnvironment attribute), and more.
+
+- Test Slices: Spring Boot also provides specialized annotations like @WebMvcTest, @DataJpaTest, @RestClientTest, etc., for more focused testing. These annotations load only a subset of the application context relevant to the specific type of test you're conducting. However, @SpringBootTest loads the entire application context.
+
+```java
+@SpringBootTest
+@AutoConfigureMockMvc(printOnlyOnFailure=false)
+@TestPropertySource(
+  locations = "classpath:application-integrationtest.properties")
+  
+@Autowired
+MockMvc mockMvc;
+```

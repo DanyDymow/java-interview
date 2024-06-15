@@ -1,0 +1,118 @@
+## Stream Api
+The Stream API in Java is a powerful feature introduced in Java 8 that allows you to process sequences of data elements
+in a functional and declarative style. Streams enable you to perform operations on data collections (e.g., lists,
+arrays) with concise and expressive code. Here's everything you need to know about the Java Stream API:
+### What is a Stream?:
+- A stream is a sequence of elements that can be processed in a functional style.
+- It is not a data structure that stores elements but rather a way to process and manipulate data.
+- Streams can be created from various data sources, including collections, arrays, files, and more.
+### Stream Operations:
+- Stream operations can be categorized into two types: intermediate and terminal operations.
+- **Intermediate** operations are operations that return another stream, allowing you to chain multiple operations together.
+- **Terminal operations** are operations that produce a final result or a side effect and terminate the stream.
+### Creating Streams:
+- You can create streams from various sources using factory methods:
+- From a collection: collection.stream()
+- From an array: Arrays.stream(array)
+- From a range of values: IntStream.range(1, 10)
+- From a file: Files.lines(path)
+### Intermediate Operations:
+- Intermediate operations transform one stream into another, allowing for a chain of operations.
+- Common intermediate operations include filter, map, flatMap, distinct, sorted, and peek.
+```java
+public class MyClass() {
+    List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+    List<String> result = names.stream()
+            .filter(name -> name.length() > 3)
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+}
+```
+### Terminal Operations:
+- Terminal operations produce a result or a side effect and terminate the stream.
+- Common terminal operations include forEach, collect, reduce, min, max, count, and toArray.
+```java
+public class MyClass() {
+    List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+    long count = numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .count();
+}
+```
+### Short-Circuiting Operations:
+- Some operations, like findAny, findFirst, and limit, are short-circuiting and do not process the entire stream. They
+  terminate as soon as a certain condition is met.
+```java
+public class MyClass() {
+    Optional<String> result = names.stream()
+            .filter(name -> name.startsWith("B"))
+            .findFirst();
+}
+```
+### Collectors:
+- The collect method is used to accumulate elements from a stream into a collection or to produce a single result.
+- You can use predefined collectors from the Collectors class or create custom collectors.
+```java
+public class MyClass() {
+    List<String> namesStartingWithA = names.stream()
+            .filter(name -> name.startsWith("A"))
+            .collect(Collectors.toList());
+}
+```
+### Parallel Streams:
+- Streams can be processed in parallel to take advantage of multi-core processors by invoking the parallel method on a
+stream.
+- However, be cautious when using parallel streams to ensure thread safety and avoid concurrent modification issues.
+```java
+public class MyClass() {
+  long count = numbers.parallelStream()
+          .filter(n -> n % 2 == 0)
+          .count();
+}
+```
+### Lazy Evaluation:
+
+- Streams are evaluated lazily, which means that intermediate operations are not executed until a terminal operation is
+invoked.
+- This allows for efficient processing of large data sets.
+### Optional:
+
+- Stream operations that may result in an empty stream can use Optional to wrap the result.
+- This prevents null references and encourages more robust error handling.
+```java
+public class MyClass() {
+  Optional<String> first = names.stream()
+          .filter(name -> name.startsWith("Z"))
+          .findFirst();
+}
+```
+### Stream API for Primitives:
+Java provides specialized streams for primitive data types (e.g., IntStream, LongStream, DoubleStream) to improve
+performance when working with numerical data.
+```java
+public class MyClass() {
+  int sum = IntStream.range(1, 11)
+          .sum();
+}
+```
+
+Comparable stream 
+```java
+public static void main(String[] args) 
+    { 
+  
+        // Creating an array of Strings 
+        String[] array = { "GFG", "Geeks", "for", 
+                           "GeeksforGeeks", "GeeksQuiz" }; 
+  
+        System.out.println("The sorted stream is :"); 
+  
+        // sorting the elements of array based 
+        // on their last character 
+        Stream.of(array).sorted((str1, str2) 
+                     -> Character.compare(str1 
+                     .charAt(str1.length() - 1), 
+                    str2.charAt(str2.length() - 1))) 
+            .         forEach(System.out::println); 
+    } 
+```

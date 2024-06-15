@@ -1,0 +1,16 @@
+## Verify
+Для проверки того, что метод не был вызван, можно использовать библиотеку Mockito и ее метод verify(). Этот метод служит для проверки, что определенное поведение произошло.
+
+В данном случае нам нужно проверить, что метод someMethod() не был вызван ни разу. Это можно сделать с помощью метода verify() и константы never(). Вот как это будет выглядеть:
+
+```java
+public class FooTest {
+    @Test
+    public void testBarMethod() {
+        Dependency dependency = Mockito.mock(Dependency.class);
+        Foo foo = new Foo(dependency);
+        foo.bar();
+        Mockito.verify(dependency, Mockito.never()).someMethod();
+    }
+}
+```

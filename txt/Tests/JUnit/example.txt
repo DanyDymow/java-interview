@@ -1,0 +1,20 @@
+
+Example unit test on java
+```java
+
+
+@DisplayName("Zero Seconds Length Test")
+@Test
+void zeroSecondsSongDuration(){
+   durationConverterWithParamsTest(Duration.ofSeconds(0), "0:00");
+}
+
+private void durationConverterWithParamsTest(Duration songDuration, String expectedDurationString){
+   var song = SongPersist.builder()
+           .duration(songDuration)
+           .build();
+
+   var converter = new DurationToLengthConverter(song);
+
+   Assertions.assertEquals(expectedDurationString, converter.length());
+```

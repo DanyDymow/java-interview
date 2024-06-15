@@ -1,0 +1,19 @@
+
+## @RequestMapping
+
+- This annotation is used to provide the routing information and tells to Spring that any HTTP request must be mapped to the respective method.
+- -To use this annotation, you have to import org.springframework.web.bind.annotation.RequestMapping;
+
+```java
+package com.edureka; 
+import org.springframework.web.bind.annotation.RequestMapping; 
+import org.springframework.web.bind.annotation.RestController; 
+
+@RestController 
+public class SampleController { 
+    @RequestMapping("/example") 
+    public String example() { 
+        return"Welcome To Edureka"; 
+    } 
+} 
+```

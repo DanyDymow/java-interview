@@ -1,0 +1,9 @@
+JSON vs XML
+spliterator
+
+synchronized java
+то такое функциональное программирование?
+closure java
+ifference between Java SE/EE/ME?
+http
+rest
