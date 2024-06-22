@@ -5,6 +5,17 @@ In Java, threads are a fundamental part of concurrent programming, allowing you 
 A thread is the smallest unit of execution in a Java program.
 Java programs can consist of multiple threads, each running independently.
 Threads share the same memory space within a process and can communicate with each other.
+
+### Отличие Thread and Runnable
+
+Чем различаются Thread и Runnable?
+Thread - это класс, некоторая надстройка над физическим потоком.
+
+Runnable - это интерфейс, представляющий абстракцию над выполняемой задачей.
+
+Помимо того, что Runnable помогает разрешить проблему множественного наследования, несомненный плюс от его использования состоит в том, что он позволяет логически отделить логику выполнения задачи от непосредственного управления потоком.
+
+
 ### Creating Threads:
 
 There are two primary ways to create threads in Java:
