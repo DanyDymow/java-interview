@@ -82,7 +82,7 @@ invoked.
 ```java
 public class MyClass() {
   Optional<String> first = names.stream()
-          .filter(name -> name.startsWith("Z"))
+          .filter(name -> name.startsWith("P"))
           .findFirst();
 }
 ```
@@ -109,10 +109,32 @@ public static void main(String[] args)
   
         // sorting the elements of array based 
         // on their last character 
-        Stream.of(array).sorted((str1, str2) 
-                     -> Character.compare(str1 
-                     .charAt(str1.length() - 1), 
-                    str2.charAt(str2.length() - 1))) 
-            .         forEach(System.out::println); 
+        Stream.of(array)
+                .sorted((str1, str2) -> Character.compare(str1.charAt(str1.length() - 1), str2.charAt(str2.length() - 1)))
+                .forEach(System.out::println); 
+    } 
+```
+
+## Reduce
+reduce operation applies a binary operator to each element in the stream where the first argument to the operator is the return value of the previous application and second argument is the current stream element.
+
+```java
+public static void main(String[] args) 
+    { 
+  
+        // String array 
+        String[] array = { "Geeks", "for", "Geeks" }; 
+  
+        // The result of the reduce() method is 
+        // an Optional because the list on which 
+        // reduce() is called may be empty. 
+        Optional<String> String_combine = Arrays.stream(array) 
+                                           .reduce((str1, str2) 
+                                           -> str1 + "-" + str2); 
+  
+        // Displaying the combined String 
+        if (String_combine.isPresent()) { 
+            System.out.println(String_combine.get()); 
+        } 
     } 
 ```

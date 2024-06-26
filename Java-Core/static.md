@@ -1,3 +1,9 @@
+static variables - на весь класс один, создается вначале, создается без обьекта класса
+static method - относится к классу, можно вызвать без обьекта, работает только со статик переменными
+static block - выполняется когда создается класс, работает со статик переменными
+static nested class - работает со статик переменными и методами, можно создать обьект без обьекта внешнего класса
+static import - позволяет использовать метод без названия класса
+
 
 ## Static Variables (Class Variables):
 - Static variables, also known as class variables, are declared using the static keyword within a class.
