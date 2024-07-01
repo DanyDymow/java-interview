@@ -11,7 +11,7 @@ SELECT ProductID, ProductName, CategoryName
 FROM Products
 LEFT JOIN Categories ON Products.CategoryID = Categories.CategoryID;
 ```
-![Alt текст](/img/right_join.jpg)
+![Alt текст](/img/left_join.jpg)
 ### RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
 ```roomsql
 SELECT ProductID, ProductName, CategoryName
