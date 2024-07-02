@@ -12,6 +12,14 @@ Hibernate is an ORM framework, which means it provides a mechanism to map Java o
 - Transaction: Hibernate supports ACID (Atomicity, Consistency, Isolation, Durability) transactions.
 - HQL (Hibernate Query Language): A language similar to SQL\
 
+## Основные модули фреймворка Hibernate включают:
+
+- Hibernate ORM: Это основной модуль, который обеспечивает взаимодействие с базами данных через ORM.
+- Hibernate Validator: Модуль для валидации данных на сервере.
+- Hibernate Search: Модуль для полнотекстового поиска и индексации.
+- Hibernate Envers: Модуль для аудита изменений в данных, хранящихся в базе данных.
+- Hibernate OGM: Модуль для работы с NoSQL базами данных.
+
 ### Object-Relational Mapping (ORM): 
 Hibernate bridges the gap between object-oriented programming and relational databases. It allows you to represent database tables as Java classes and vice versa, making it easier to work with data.
 
