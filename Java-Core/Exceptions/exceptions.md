@@ -1,3 +1,11 @@
+## Exceptions
+
+## Errors 
+Ошибки (Errors) представляют собой более серьёзные проблемы, которые, согласно спецификации Java, не следует обрабатывать в собственной программе, поскольку они связаны с проблемами уровня JVM. Например, исключения такого рода возникают, если закончилась память доступная виртуальной машине.
+
+## Исключения (Exceptions) 
+являются результатом проблем в программе, которые в принципе решаемы, предсказуемы и последствия которых возможно устранить внутри программы. Например, произошло деление целого числа на ноль.
+
 ### Checked
 Caught by try\catch\finally or declared in method using throws
 
@@ -14,7 +22,9 @@ Unchecked exceptions, also known as runtime exceptions, are not checked at compi
 - NullPointer
 - ArrayIndexOutOf
 - Arithmetic
+- OutOfMemoryError
 
+(ArithmeticException, ClassCastException, ConcurrentModificationException, IllegalArgumentException, IllegalStateException, IndexOutOfBoundsException, NoSuchElementException, NullPointerException, UnsupportedOperationException)
 ```java
 import java.io.*;
 class Example_Throw {
