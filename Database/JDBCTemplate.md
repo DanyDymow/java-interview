@@ -77,3 +77,18 @@ public class UserRepository {
 }
 ```
 
+## Main Classes and Interfaces: 
+
+java.sql.DriverManager - позволяет загрузить и зарегистрировать необходимый JDBC-драйвер, а затем получить соединение с базой данных.
+
+javax.sql.DataSource - решает те же задачи, что и DriverManager, но более удобным и универсальным образом. Существуют также javax.sql.ConnectionPoolDataSource и javax.sq1.XADataSource задача которых - обеспечение поддержки пула соединений.
+
+java.sql.Connection - обеспечивает формирование запросов к источнику данных и управление транзакциями. Также предусмотрены интерфейсы javax.sql.PooledConnection и javax.sql.XAConnection.
+
+java.sql.Statement , java.sql.PreparedStatement и java.sql.CallableStatement - эти интерфейсы позволяют отправить запрос к источнику данных.
+
+java.sql.ResultSet - объявляет методы, которые позволяют перемещаться по набору данных и считывать значения отдельных полей в текущей записи.
+
+java.sql.ResultSetMetaData - позволяет получить информацию о структуре набора данных.
+
+java.sql.DatabaseMetaData - позволяет получить информацию о структуре источника данных.
