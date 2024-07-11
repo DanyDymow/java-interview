@@ -59,18 +59,12 @@ Terminated: When a thread has completed its execution.
 
 A thread goes through various states during its lifecycle, from creation to termination.
 The start(), sleep(), wait(), and other methods control the transitions between states.
-### Thread Priorities:
 
-Threads can have priorities ranging from Thread.MIN_PRIORITY to Thread.MAX_PRIORITY.
-Priority affects the thread's preference for CPU time but does not guarantee execution order.
 ### Thread Synchronization:
 
 Synchronization is used to ensure that only one thread accesses a shared resource at a time.
 The synchronized keyword, wait(), and notify() methods are commonly used for synchronization.
-### Thread Safety:
 
-Thread safety is crucial when multiple threads access shared data.
-Proper synchronization techniques are required to avoid data corruption and race conditions.
 ### Daemon Threads:
 
 Daemon threads are background threads that run without preventing the JVM from exiting.
