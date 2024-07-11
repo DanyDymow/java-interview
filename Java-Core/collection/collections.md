@@ -30,3 +30,10 @@ public class MyClass{
 ### Sorting and Searching:
 
 The Java Collections Framework provides methods for sorting collections using the Comparable and **Comparator** interfaces. You can also search for elements using methods like **contains**, **indexOf**, and **binarySearch**.
+
+### Hierarchy 
+
+Два интерфейса Collection and Map
+![Alt текст](/img/collections/hierarchy.png)
+
+![Alt текст](/img/collections/hierarchy-map.png)

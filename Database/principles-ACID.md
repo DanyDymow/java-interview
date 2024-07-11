@@ -10,4 +10,4 @@ Successful transaction will not break data
 Parallel transaction shouldn't affect on result
 
 ### Durability
-IF it is complete it shouldn't be changed
+If it is complete it shouldn't be changed
