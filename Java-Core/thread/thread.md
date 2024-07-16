@@ -1,11 +1,3 @@
-In Java, threads are a fundamental part of concurrent programming, allowing you to execute multiple tasks or processes concurrently. Threads enable your Java programs to efficiently utilize multi-core processors and perform tasks in parallel.
-
-### What is a Thread?:
-
-A thread is the smallest unit of execution in a Java program.
-Java programs can consist of multiple threads, each running independently.
-Threads share the same memory space within a process and can communicate with each other.
-
 ### Отличие Thread and Runnable
 
 Чем различаются Thread и Runnable?

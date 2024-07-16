@@ -2,23 +2,23 @@
 
 - A time you had to overcome adversity
 
-On my last project. When I was working as a test engineer while still in a middle position, I was given a rather difficult task. It was necessary to write a test taking into account geopositional points and a geometric building. Since I worked on a project related to maps, in addition to everything, the test had to check almost the entire world. I was limited in time and the test had to show good operating time. I had several options for writing this test, but I couldn’t choose which one was better and which one would give the best test time and quality. So I decided to hold a meeting with the lead to discuss possible solutions. I also invited the signor to get the opinion of a more experienced colleague. After discussion, we identified the strengths of the two methods and combined them. As a result, I managed to complete this test on time and it showed an acceptable time for clients and also had the smallest error rate
+On my last project. When I was working as a test engineer while still in a middle position, I was given a rather difficult task. It was necessary to write a test taking into account geopositional points and a geometric building. Since I worked on a project related to maps, in addition to everything, the test had to check almost the entire world. I was limited in time and the test had to show good execution time. I had several options for writing this test, but I couldn’t choose which one was better and which one would give the best test time and quality. So I decided to hold a meeting with the lead to discuss possible solutions. I also invited the seniors to get the opinion of a more experienced colleagues. After discussion, we identified the strengths of the two methods and combined them. As a result, I managed to complete this test on time and it showed an acceptable time for clients and also had the smallest error rate
 ----------------
 
 - Give me an example of when you had a conflict with someone on your team and what the result was: 
 Situation:
-In my previous role as a software engineer at XYZ Company, I was part of a team developing a new feature for our primary product. The project was under a tight deadline, and each team member was responsible for different parts of the implementation. I was working closely with a colleague who was handling the backend services while I focused on the frontend integration.
+In my previous role as a software engineer, I was part of a team developing a new feature for our primary product. The project was under a tight deadline, and each team member was responsible for different parts of the implementation. I was working closely with a colleague who was handling the one service while I focused on the another part of service. In the end these service should collaborate together
 
 Task:
-We encountered a conflict when my colleague insisted on using a particular API design that I believed would cause significant complications and inefficiencies in the frontend development. I was concerned that his approach would lead to performance issues and make the frontend codebase harder to maintain.
+We encountered a conflict when my colleague choose some solution that I believed would cause significant complications and performance problems. I was concerned that his approach would lead to performance issues and make the final product less efficient
 
 Action:
-To address the conflict, I scheduled a meeting with my colleague to discuss our perspectives in detail. I presented my concerns with data and examples to illustrate the potential impact on performance and maintainability. I also listened carefully to his rationale for preferring his design, acknowledging his valid points. We then brainstormed possible solutions together, aiming to find a compromise that would satisfy both of our requirements.
+To address the conflict, I scheduled a meeting with my colleague to discuss our perspectives in detail. I presented my concerns with data and examples to illustrate the potential impact on performance and maintainability. I also listened carefully to his opinion for preferring his design. We then brainstormed possible solutions together, aiming to find a compromise that would satisfy both of our requirements.
 
 After a productive discussion, we agreed to involve a senior engineer to provide a third perspective. The senior engineer helped us evaluate both approaches and suggested a hybrid solution that incorporated the strengths of both designs while mitigating the issues we had identified.
 
 Result:
-By approaching the conflict collaboratively and seeking input from a senior engineer, we were able to design an API that was efficient and easy to integrate with the frontend. This not only resolved our conflict but also led to a better overall solution for the project. The feature was successfully completed on time, and the performance metrics met our targets. Additionally, this experience improved our working relationship and team cohesion, as we developed a deeper respect for each other's expertise and perspectives.
+By approaching the conflict collaboratively and seeking input from a senior engineer, we were able to design an API that was efficient and easy to integrate with each other This not only resolved our conflict but also led to a better overall solution for the project. The feature was successfully completed on time, and the performance metrics met our targets. Additionally, this experience improved our working relationship and team working, as we developed a deeper respect for each other's expertise and perspectives.
 -------------------
 
 - Why Microsoft?
@@ -29,11 +29,16 @@ Microsoft is the world's technology services leader. Their products are used by 
 - What is your favorite Microsoft product and why
 
 Cost: Microsoft Word is not free and requires a paid license or subscription to access the full set of features. This cost may be a disadvantage for individuals or organizations on a tight budget.
+
 Compatibility issues: Different versions of Word may experience compatibility issues when opening documents created in older or newer versions. This may result in formatting problems or loss of content.
+
 Learning curve: Although Word is easy to use, its extensive features and capabilities can be overwhelming for beginners. Learning to use more advanced features effectively may require additional time and effort.
+
 Limited collaboration capabilities: Although Word allows collaboration, it may not be as robust in this regard as some dedicated collaboration platforms, such as Google Docs, which offer more real-time collaborative editing capabilities.
+
 Resource intensive: Microsoft Word can be resource intensive, especially when working with large documents or complex formatting. Older computers and devices may experience performance issues.
 Native format: Word documents are saved in a native format (.docx), which can be problematic when shared with people who don't have access to Word or when using alternative software.
+
 --------------------------
 - Are you comfortable with working in a team setting? How would you handle a situation where there is a disagreement among team members?
 
