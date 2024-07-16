@@ -37,6 +37,7 @@ Learning curve: Although Word is easy to use, its extensive features and capabil
 Limited collaboration capabilities: Although Word allows collaboration, it may not be as robust in this regard as some dedicated collaboration platforms, such as Google Docs, which offer more real-time collaborative editing capabilities.
 
 Resource intensive: Microsoft Word can be resource intensive, especially when working with large documents or complex formatting. Older computers and devices may experience performance issues.
+
 Native format: Word documents are saved in a native format (.docx), which can be problematic when shared with people who don't have access to Word or when using alternative software.
 
 --------------------------
@@ -44,7 +45,7 @@ Native format: Word documents are saved in a native format (.docx), which can be
 
 - Tell me about a time you failed
 
-At my last job, I had the task of implementing a certain module into a project for subsequent use by other team members. I found the documentation for this module and started implementing it. But I don’t fully understand why this module will be used in the future and what tasks it should solve. When the task was completed on my part, other developers began to use this module. They started contacting me asking for clarification on how they should use it and I realized that I had not implemented this logic in this module. As a result, the module was integrated but could not perform all the necessary functions. From this situation, I learned that we need to ask more questions and clearly understand why we need this or that function. What and how we solve with this approach
+At my last job, I had the task of implementing a certain module into a project for subsequent use by other team members. I found the documentation for this module and started implementing it. But I don’t fully understand why this module will be used in the future and what tasks it should solve. When the task was completed on my part, other developers began to use this module. They started contacting me asking for clarification on how they should use it and I realized that I had not implemented this logic in this module. As a result, the module was integrated but could not perform all the necessary functions. From this situation, I learned that I need to ask more questions and clearly understand why we need this or that function. What and how we solve with this approach
 --------------------------
 
 - Tell me about a time when you had to make an important decision with limited information
