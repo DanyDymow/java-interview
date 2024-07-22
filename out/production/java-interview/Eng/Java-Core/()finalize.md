@@ -1,0 +1,11 @@
+## Finalize
+
+Through calling the finalize() method (which inherits from Java.lang.Object) used to clear memory before returning control to the operating system. This method is called when an object is destroyed by the garbage collector and by overriding finalize() you can program the actions necessary to correctly delete an instance of the class - for example, closing network connections, database connections, releasing locks on files, etc.
+
+After this method executes, the object must be recollected by the garbage collector (and this is considered a serious problem with the finalize() method because it prevents the garbage collector from freeing memory). Calling this method is not guaranteed because the application may be terminated before garbage collection is triggered.
+
+The object will not necessarily be available for assembly immediately - the finalize() method can save a reference to the object somewhere. This situation is called the “rebirth” of an object and is considered an antipattern. The main problem with this trick is that an object can only be “revived” once.
+
+The finalize() call itself occurs in a separate Finalizer thread (java.lang.ref.Finalizer.FinalizerThread), which is created when the virtual machine starts (in the static section when loading the Finalizer class). The finalize() methods are called sequentially in the order in which they were added to the list by the garbage collector. Accordingly, if some finalize() hangs, it will hang the Finalizer thread, but not the garbage collector. This in particular means that objects that do not have a finalize() method will be properly deleted, but those that do will be added to the queue until the Finalizer thread is freed, the application terminates, or the memory runs out.
+
+The same applies to exceptions thrown during finalize(): the runFinalizer() method of the Finalizer thread ignores all exceptions thrown during finalize(). Thus, the occurrence of an exception will not affect the performance of the garbage collector in any way.

@@ -1,4 +1,4 @@
-package Patterns.Builder2;
+package Eng.Patterns.Builder2;
 
 public class Product {
     private String name;

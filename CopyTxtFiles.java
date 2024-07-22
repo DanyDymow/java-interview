@@ -8,7 +8,7 @@ import java.nio.file.StandardCopyOption;
 public class CopyTxtFiles {
     public static void main(String[] args) {
         // Папки, которые нужно обработать
-        String[] folders = { "!Eng", "Eng" };
+        String[] folders = {"NoEng", "Eng" };
 
         for (String folder : folders) {
             File dir = new File(folder);
@@ -33,16 +33,16 @@ public class CopyTxtFiles {
                 if (file.isDirectory()) {
                     // Рекурсивный обход поддиректорий
                     processDirectory(rootDir, file);
-                } else if (file.isFile() && file.getName().endsWith(".txt")) {
+                } else if (file.isFile() && file.getName().endsWith(".md")) {
                     // Если это .txt файл, копируем его в соответствующую папку txt
                     File txtDir = new File(rootDir, "txt");
                     if (!txtDir.exists()) {
                         txtDir.mkdirs();
                     }
 
-                    // Построение пути к файлу в новой папке txt
                     Path relativePath = rootDir.toPath().relativize(file.toPath());
-                    Path destinationPath = Paths.get(txtDir.getPath(), relativePath.toString());
+                    String newFileName = relativePath.toString().replaceAll("\\.md$", ".txt");
+                    Path destinationPath = Paths.get(txtDir.getPath(), newFileName);
 
                     // Создаем директорию, если она не существует
                     if (!destinationPath.getParent().toFile().exists()) {

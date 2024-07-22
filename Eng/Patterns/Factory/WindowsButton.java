@@ -1,6 +1,6 @@
-package Factory;
+package Eng.Patterns.Factory;
 
-public class WindowsButton  implements Button{
+public class WindowsButton  implements Button {
     @Override
     public void render() {
         System.out.println("Windows button");

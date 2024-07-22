@@ -1,4 +1,4 @@
-package Decorator;
+package Eng.Patterns.Decorator;
 
 abstract class CoffeeDecorator implements Coffee {
     protected Coffee decoratedCoffee;

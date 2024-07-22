@@ -1,0 +1,50 @@
+## Аннотация @RestClientTest 
+является частью Spring Boot Test и используется для тестирования REST-клиентов в приложениях Spring. Вот основные моменты, которые стоит знать о ней:
+
+- Цель: @RestClientTest предназначена для создания интеграционных тестов REST-клиентов в Spring приложениях. Она позволяет тестировать взаимодействие с внешними сервисами без реального запуска этих сервисов.
+- Использование: Вы можете применять аннотацию @RestClientTest к вашим классам тестов. При этом указывается класс REST-клиента, который нужно протестировать.
+- Автоматическая настройка: Spring Boot автоматически настраивает тестовый контекст, обеспечивая инъекцию REST-клиента и всех его зависимостей. Это включает в себя автоматическую загрузку только необходимых компонентов, связанных с REST-клиентом, а не всего контекста приложения.
+- Подмена HTTP запросов: В тестовом окружении все HTTP запросы, инициированные REST-клиентом, перехватываются, и можно настроить моки для ожидаемых ответов. Это позволяет изолировать тесты от внешних зависимостей и создавать надёжные тесты в условиях контролируемой среды.
+- Тестирование обработки ответов: @RestClientTest также позволяет тестировать, как клиент обрабатывает ответы от удаленного сервера. Вы можете проверить, что ваш REST-клиент правильно обрабатывает ответы и возвращает ожидаемые результаты.
+
+
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
+import org.springframework.boot.test.mock.mockito.MockRestServiceServer;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.web.client.ExpectedCount;
+import org.springframework.test.web.client.MockRestServiceServer;
+import org.springframework.test.web.client.match.MockRestRequestMatchers;
+import org.springframework.test.web.client.response.MockRestResponseCreators;
+import org.springframework.web.client.RestTemplate;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@RestClientTest(MyRestClient.class)
+public class MyRestClientTest {
+
+    @Autowired
+    private MyRestClient myRestClient;
+
+    @Autowired
+    private MockRestServiceServer mockRestServiceServer;
+
+    @Test
+    public void testGetData() {
+        // Настройка мокованного ответа от сервера
+        this.mockRestServiceServer.expect(ExpectedCount.once(),
+                MockRestRequestMatchers.requestTo("/api/data"))
+                .andRespond(MockRestResponseCreators.withSuccess("Hello", MediaType.TEXT_PLAIN));
+
+        // Вызов метода, который мы хотим протестировать
+        ResponseEntity<String> response = myRestClient.getData();
+
+        // Проверка результата
+        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
+        assertThat(response.getBody()).isEqualTo("Hello");
+    }
+}
+```

@@ -1,4 +1,4 @@
-package Factory;
+package Eng.Patterns.Factory;
 
 public abstract class Factory {
 

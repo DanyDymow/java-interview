@@ -1,4 +1,5 @@
-package Singleton;
+package Eng.Patterns.Singleton;
+
 public class Demo {
     public static void main(String[] args) {
         System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +

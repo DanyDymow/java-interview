@@ -1,0 +1,10 @@
+## Inner Classes
+
+### Non-static (Inner) Classes: 
+T hese are inner classes that are associated with an instance of the outer class. They have access to the instance variables and methods of the outer class. Non-static inner classes are sometimes called "inner classes."
+
+### Static Nested Classes: 
+These are inner classes that are declared as static. They are not associated with any instance of the outer class and can be thought of as a nested class within the outer class's namespace.
+
+### Local Inner Classes: 
+These are inner classes defined within a method or a block of code. They have access to the variables of the enclosing method or block and are not accessible outside that scope.

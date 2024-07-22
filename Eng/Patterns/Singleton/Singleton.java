@@ -1,4 +1,4 @@
-package Singleton;
+package Eng.Patterns.Singleton;
 public final class Singleton {
 
     private static Singleton instance;

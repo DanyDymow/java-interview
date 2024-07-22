@@ -1,4 +1,4 @@
-package Patterns.Builder;
+package Eng.Patterns.Builder;
 
 public class Manual {
     private final CarType carType;

@@ -1,4 +1,4 @@
-package Decorator;
+package Eng.Patterns.Decorator;
 
 class MilkDecorator extends CoffeeDecorator {
     public MilkDecorator(Coffee coffee) {

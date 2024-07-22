@@ -1,0 +1,24 @@
+## Patterns 
+In Spring, design patterns are recurring solutions to common problems in software design and development. Spring Framework is built around several design patterns that help address various aspects of application development, such as dependency injection, aspect-oriented programming, and transaction management. Understanding these design patterns can help you use Spring effectively in your applications. Here are some important design patterns in Spring:
+
+### Dependency Injection (DI) Pattern:
+
+Spring's core design pattern is Dependency Injection (DI). DI is a pattern where the dependencies of a class are injected into it rather than the class creating or managing its own dependencies.
+In Spring, this is achieved through the Inversion of Control (IoC) container, which manages the creation and wiring of objects (beans) based on configuration files or annotations.
+DI allows for loose coupling between components, making the application more modular and easier to maintain.
+### Singleton Pattern:
+
+The Singleton pattern ensures that a class has only one instance throughout the lifetime of an application.
+Spring's IoC container typically manages beans as singletons by default, meaning that a single instance is created and shared for each bean definition.
+### Factory Method Pattern:
+
+The Factory Method pattern provides an interface for creating objects but allows subclasses to alter the type of objects that will be created.
+In Spring, this pattern is used for creating beans in the application context using FactoryBean implementations or custom factory methods.
+### Proxy Pattern:
+
+The Proxy pattern is used in Spring's AOP (Aspect-Oriented Programming) support. A proxy is an object that intercepts method calls to another object (the target) and can add behavior before or after the method invocation.
+Spring AOP uses dynamic proxies or bytecode generation to create proxies for cross-cutting concerns such as logging, security, and transactions.
+### Template Method Pattern:
+
+The Template Method pattern defines the structure of an algorithm but allows subclasses to implement specific steps of that algorithm.
+Spring provides various template classes (e.g., JdbcTemplate, RestTemplate) that follow this pattern, making it easier to perform common tasks like database access and REST API calls.

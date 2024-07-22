@@ -1,4 +1,4 @@
-package Strategy;
+package Eng.Patterns.Strategy;
 
 public class Main {
     public static void main(String[] args) {

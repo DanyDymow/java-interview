@@ -1,0 +1,17 @@
+### OFFSET 
+The offset pagination leverages the OFFSET and LIMIT commands in SQL to paginate data
+```roomsql
+SELECT * FROM user_tab
+ORDER BY id DESC
+LIMIT 10 OFFSET 20;
+```
+### Cursor
+The cursor pagination utilizes a pointer that refers to a specific database record.
+```java
+API: GET /api/user/list
+
+request: {
+ cursor: 12345,
+ page_size: 10
+}
+```

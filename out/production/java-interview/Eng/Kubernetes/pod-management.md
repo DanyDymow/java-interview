@@ -1,0 +1,5 @@
+How can we control the placement of PODs on specific nodes of the k8s cluster?
+— There are several possibilities for this.
+NodeSelector/node affinity is a mechanism that allows you to launch PODs on nodes with a specific set of labels. This can be useful if, for example, PODs require certain hardware - say, we have a pool of GPU nodes for machine learning needs.
+taints/tolerations - a mechanism that allows you to prohibit the launch of PODs on a node (taint - described on the node) that do not have permission (toleration - described on POD). This can be useful if we have several environments in the cluster - we can allocate nodes for production and, using taint, prevent PODs of test environments from running there.
+pod affinity/antiAffinity is a mechanism that allows you to group PODs of different applications on common nodes (if, for example, fast network access is important to them) or vice versa - force them to run on different nodes (for example, to distribute PODs of one application across cluster nodes to increase fault tolerance in in case of node failure).

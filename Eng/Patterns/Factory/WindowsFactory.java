@@ -1,4 +1,4 @@
-package Factory;
+package Eng.Patterns.Factory;
 
 public class WindowsFactory extends Factory {
     @Override

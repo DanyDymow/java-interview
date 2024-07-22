@@ -1,6 +1,6 @@
-package Decorator;
+package Eng.Patterns.Decorator;
 
-public class LatteDecorator extends CoffeeDecorator{
+public class LatteDecorator extends CoffeeDecorator {
 
     public LatteDecorator(Coffee coffee) {
         super(coffee);

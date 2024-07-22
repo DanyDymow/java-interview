@@ -1,4 +1,4 @@
-package Decorator;
+package Eng.Patterns.Decorator;
 
 class SimpleCoffee implements Coffee {
     @Override

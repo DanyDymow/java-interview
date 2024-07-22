@@ -1,4 +1,5 @@
-package Singleton;
+package Eng.Patterns.Singleton;
+
 public final class ThreadSafeSingleton {
     // The field must be declared volatile so that double check lock would work
     // correctly.

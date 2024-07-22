@@ -1,4 +1,4 @@
-package Patterns.Builder;
+package Eng.Patterns.Builder;
 
 /**
  * Builder interface defines all possible ways to configure a product.

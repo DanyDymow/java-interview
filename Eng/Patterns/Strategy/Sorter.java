@@ -1,4 +1,4 @@
-package Strategy;
+package Eng.Patterns.Strategy;
 
 class Sorter {
     private SortingStrategy strategy;

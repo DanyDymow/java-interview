@@ -1,0 +1,3 @@
+HTTPS (from the English HyperText Transfer Protocol Secure) is a secure data transfer protocol that supports encryption using the SSL and TLS cryptographic protocols, and is an extended version of the HTTP protocol. To better understand what HTTPS means, let's deal with everything in order.
+
+The DNS protocol (from the English phrase Domain Name System means domain name system) is a clearly distributed computer system for obtaining information about the state of a domain. It is often used to obtain an IP address from the name of a specific host (device or computer), obtaining the necessary information about the route of mail that is served by nodes for protocols in the domain.

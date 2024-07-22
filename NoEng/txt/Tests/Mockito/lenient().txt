@@ -1,0 +1,40 @@
+## lanient()
+
+Mockito.lenient() is a feature introduced in Mockito 2.28.0, designed to provide more flexibility in writing and managing mock-based tests, particularly when dealing with stubbing that may not always be used or called during the test execution. Here's a detailed breakdown of Mockito.lenient():
+
+Purpose and Usage
+Relaxing Strict Stubbing:
+
+Mockito, by default, enforces strict stubbing, which means it checks that all the stubbed methods are actually invoked during the test execution. If a stubbed method is not called, Mockito will throw an exception to help ensure the correctness of the test and reduce the chances of having unnecessary or redundant stubbing.
+Mockito.lenient() allows developers to mark certain stubbings as lenient, meaning that if these stubbed methods are not called during the test, Mockito will not throw an exception. This is useful in scenarios where the invocation of certain methods may be optional or context-dependent.
+Improving Test Flexibility:
+
+It helps in writing more flexible and less brittle tests, especially in complex scenarios where interactions with mocks are not straightforward or deterministic.
+How to Use Mockito.lenient()
+To use Mockito.lenient(), you simply apply it to the stubbing you want to relax. Here’s an example to illustrate its usage:
+
+```java
+import static org.mockito.Mockito.*;
+
+public class LenientStubbingExample {
+
+    public static void main(String[] args) {
+        // Create a mock instance
+        MyService myService = mock(MyService.class);
+
+        // Lenient stubbing
+        lenient().when(myService.someMethod()).thenReturn("some value");
+
+        // Other stubbing
+        when(myService.anotherMethod()).thenReturn("another value");
+
+        // Test scenarios where someMethod() might not be called
+        MyComponent component = new MyComponent(myService);
+        component.performOperation();
+
+        // Verification
+        verify(myService).anotherMethod();
+        // No need to verify someMethod() because of lenient stubbing
+    }
+}
+```

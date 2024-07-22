@@ -1,0 +1,53 @@
+## Retryable
+
+Spring Retry provides an ability to automatically re-invoke a failed operation. This is helpful where the errors may be transient (like a momentary network glitch).
+
+In this tutorial, we’ll see the various ways to use Spring Retry: annotations, RetryTemplate, and callbacks.
+
+```java
+@SpringBootApplication
+@EnableRetry
+public class RetryableApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RetryableApplication.class, args);
+    }
+
+}
+```
+
+```java
+@Service
+@Slf4j
+public class TodoService {
+
+    @Retryable(
+        retryFor = { SaveTodoException.class, IllegalArgumentException.class },
+        maxAttempts = 3,
+        backoff = @Backoff(delay = 800))
+    public String saveTodo(Todo todo) throws SaveTodoException, IllegalArgumentException {
+
+        if (todo.getContent().equals("SaveTodoException")) {
+            log.error("Error when todo saving. [SaveTodoException]");
+            throw new SaveTodoException("Todo did not save");
+        } else if (todo.getContent().equals("IllegalArgumentException")) {
+            log.error("Error when todo saving. [IllegalArgumentException]");
+            throw new IllegalArgumentException("Todo did not save");
+        }
+
+        return "todo saved.";
+    }
+
+    @Recover
+    public String recoverSaveTodo(SaveTodoException e, Todo todo){
+        log.info(todo.getContent());
+        return "recover save todo [SaveTodoException]";
+    }
+
+    @Recover
+    public String recoverSaveTodo(IllegalArgumentException e, Todo todo){
+        log.info(todo.getContent());
+        return "recover save todo [IllegalArgumentException]";
+    }
+}
+```
