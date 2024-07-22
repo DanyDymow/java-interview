@@ -1,0 +1,23 @@
+## Anonymous classes
+Anonymous classes in Java are a way to create a class and instantiate its object at the same time, without explicitly declaring a separate class. They are often used when you need to implement a simple interface or extend a class with a small amount of code.
+
+``` java 
+interface MyInterface {
+    void display();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an anonymous class implementing MyInterface
+        MyInterface obj = new MyInterface() {
+            @Override
+            public void display() {
+                System.out.println("Inside anonymous class");
+            }
+        };
+
+        // Calling the method of the anonymous class
+        obj.display(); // Output: Inside anonymous class
+    }
+}
+```
