@@ -327,3 +327,45 @@ if (obj instanceof String s) {
  // ... s.substring(1)
 }
 ```
+## - Java 17 -
+
+We can user switch for object type checking
+```java
+switch (obj) {
+    case String str -> System.out.println("String: " + str);
+    case Integer i -> System.out.println("Integer: " + i);
+    case Double d -> System.out.println("Double: " + d);
+    default -> System.out.println("Unknown type");
+}
+```
+
+Sealed Classes (sealed keyword) – Restricts class inheritance.
+Pattern Matching for Switch (Preview) – More expressive switch statements.
+
+## - Java 19 -
+Virtual Threads (Preview) – Lightweight threads for concurrency (Project Loom).
+
+Structured Concurrency (Incubator) – Simplifies multi-threaded programming.
+Foreign Function & Memory API (Preview) – Efficient native memory and interop.
+Pattern Matching for Switch (Third Preview) – Enhancements to switch.
+
+## - Java 20 -
+Scoped Values (Incubator) – Efficiently share data between threads.
+Record Patterns (Second Preview) – Enhances pattern matching.
+Virtual Threads (Second Preview) – More refinements.
+
+
+## - Java 21 -
+String Templates 
+```java
+String name = "John";
+int age = 30;
+String message = STR."Hello, my name is \{name} and I am \{age} years old.";
+```
+STR — this is processor
+```java
+int x = 10;
+int y = 20;
+String result = STR."The sum of \{x} and \{y} is \{x + y}.";
+```
+Can use our own custom processor
