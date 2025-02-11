@@ -1,1 +1,1 @@
-![Alt текст](/img/system-design/search.jpg)
+![Alt текст](/eng/img/system-design/search.jpg)

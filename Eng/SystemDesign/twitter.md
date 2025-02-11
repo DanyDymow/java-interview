@@ -1,1 +1,1 @@
-![Alt текст](/img/system-design/twitter.gif)
+![Alt текст](/eng/img/system-design/twitter.gif)

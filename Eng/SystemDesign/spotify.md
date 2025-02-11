@@ -1,1 +1,1 @@
-![Alt текст](/img/system-design/ spotify.jpg)
+![Alt текст](/eng/img/system-design/ spotify.jpg)
