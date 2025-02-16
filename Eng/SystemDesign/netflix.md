@@ -1,0 +1,1 @@
+![Alt текст](/eng/img/system-design/netflix.jpg)
