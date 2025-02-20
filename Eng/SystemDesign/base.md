@@ -2,6 +2,8 @@ scalability  - масшабируемость
 Reliability - надежность 
 latency - задержка
 high availability - высокая доступность
+frequency - частота
+extensibility - расширяемость
 
 ### 1. Understand the Problem Clearly
 Clarify the requirements with the interviewer. Ask questions to understand:
