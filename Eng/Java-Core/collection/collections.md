@@ -23,8 +23,7 @@ public class MyClass{
 
 **LinkedList** provides fast insertions and deletions but slower element access.
 
-![Alt текст](/Eng/img/collections/collections-time.png)
-
+![Alt текст](/img/collections/collections-time.png)
 
 
 ### Sorting and Searching:
@@ -34,6 +33,7 @@ The Java Collections Framework provides methods for sorting collections using th
 ### Hierarchy 
 
 Два интерфейса Collection and Map
-![Alt текст](/Eng/img/collections/hierarchy.png)
+![Alt текст](/img/collections/full-hierarchy.png)
+![Alt текст](/img/collections/hierarchy.png)
 
-![Alt текст](/Eng/img/collections/hierarchy-map.png)
+![Alt текст](/img/collections/hierarchy-map.png)

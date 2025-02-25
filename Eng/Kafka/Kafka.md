@@ -36,4 +36,4 @@ Kafka Connect is a framework for building and running connectors that facilitate
 ### Durability and Scalability:
 Kafka is designed for high durability and scalability. It can handle millions of messages per second and is widely used in scenarios requiring data ingestion, event sourcing, and log aggregation.
 
-![Alt текст](/eng/img/kafka.png)
+![Alt текст](/img/kafka.png)

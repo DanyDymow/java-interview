@@ -2,19 +2,19 @@
 - Chained design pattern
 
 The Chain microservice design pattern produces a single, consolidated response to a request. In this case, Service A receives a request from a client, communicates with Service B, which in turn can contact Service C. All of these services will most likely exchange synchronous request/response messages over HTTP.
-![Alt ​​text](/eng/img/micro-patterns/chained.png)
+![Alt ​​text](/img/micro-patterns/chained.png)
 
 
 - Asynchronous Messaging pattern
 
 As widespread and understandable as the REST pattern is, it has an important limitation: it is synchronous and, therefore, blocking. It is possible to provide asynchrony, but this is done differently in each application. Therefore, some microservice architectures may use message queues rather than the REST request/response model.
-![Alt ​​text](/eng/img/micro-patterns/asynchronous.png)
+![Alt ​​text](/img/micro-patterns/asynchronous.png)
 
 
 - API Gateway / Aggregator
 
 This provides a single entry point for all services, rather than the client having to communicate directly with each service. The API gateway provides aggregation, authentication, caching, etc.
-![Alt ​​text](/eng/img/micro-patterns/api.png)
+![Alt ​​text](/img/micro-patterns/api.png)
 
 
 - Service Discovery/Service Registery
@@ -22,7 +22,7 @@ This provides a single entry point for all services, rather than the client havi
 
 Service Discovery was created so that at minimal cost you can connect a new application to our existing environment. Using Service Discovery, we can maximally separate either a Docker container or a virtual service from the environment in which it is running.
 
-![Alt ​​text](/eng/img/micro-patterns/service-registery.png)
+![Alt ​​text](/img/micro-patterns/service-registery.png)
 
 Here we see that we are launching a third instance of the application. Accordingly, when the application starts, it registers with Service Discovery. Service Discovery notifies load-balancer. Load-balancer changes its config automatically and the new backend is put into operation. In this way, backends can be added, or, conversely, excluded from work.
 

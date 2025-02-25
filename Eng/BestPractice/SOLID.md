@@ -16,7 +16,7 @@ By adhering to the SRP, you make your code more maintainable because changes to 
 The OCP states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
 In other words, you should be able to extend the behavior of a module without changing its source code.
 Achieving this principle often involves using techniques like inheritance, interfaces, and polymorphism to allow for easy extension.
-### Liskov Substitution Principle (LSP): (each parent class can replace child)
+### Liskov Substitution Principle (LSP): (each parent class can replace by child)
 
 The LSP states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
 In simpler terms, if you have a base class and a derived class, you should be able to use instances of the derived class wherever you use instances of the base class.

@@ -1,1 +1,1 @@
-![Alt текст](/eng/img/system-design/uber.jpg)
+![Alt текст](/img/system-design/uber.jpg)

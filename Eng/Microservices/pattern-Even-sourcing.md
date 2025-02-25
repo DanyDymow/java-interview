@@ -9,7 +9,7 @@ event sourcing
 
 Event sourcing has the following advantages and disadvantages:
 
-![Alt ​​text](/eng/img/micro-patterns/event_sourcing.png)
+![Alt ​​text](/img/micro-patterns/event_sourcing.png)
 
 
 ### Benefits of Event Sourcing
