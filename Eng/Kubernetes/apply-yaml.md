@@ -4,6 +4,8 @@ Let's say you have a YAML file that describes deployment and service. You enter 
 
 - Kubernetes API will receive the request, check the rights of the user who owns the key, and, if the rights allow, write information about the new deployment and service to ETCD.
 
+(ETCD is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.)
+
 - Kubernetes controller manager will see that the deployment is described, and using the Kubernetes API, write to ETCD information about the creation of a replicaset and the required number of PODs based on it. At this stage, admission controllers can come into play, which are capable of validating the correctness of PODs or transforming them.
 
 - Kubernetes scheduler will see information about new PODs and, based on their parameters (settings of required resources, nodeSelectors, taints/tolerations, podAntiAffinity, etc.) will assign PODs to suitable nodes.

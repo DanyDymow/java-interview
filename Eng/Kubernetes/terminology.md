@@ -1,18 +1,17 @@
 ## Terminology
 
 ## POD 
-самый маленький элемент и состоит из 1 или нескольких контейнеров, для него выделяет ТОМ и выделяется общий IP адрес
+smallest element and in contains from 1 or several containets and there is special TOM for it and get separated IP
 
-Рекомендуется делать один контейнер на один под
+It is recomended to created one container for one pod
 
-Помимо контейнеров, у каждого пода есть:
 
-— уникальный IP-адрес, который позволяет подам общаться друг с другом;
-— хранилище PV (по необходимости);
-— данные по конфигурации, которые определяют, как контейнер должен запускаться.
+— unique IP, which allows to connect different pods betwen each other
+— storage PV (if needed);
+— config data which describes how container should be up 
 
-![Alt текст](img/k8s/pod.jpg)
-![Alt текст](img/k8s/pod.png)
+![Alt текст](/img/k8s/pod.jpg)
+![Alt текст](/img/k8s/pod.png)
 
 ## Кластер Kuberneters
 

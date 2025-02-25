@@ -19,7 +19,6 @@ This provides a single entry point for all services, rather than the client havi
 
 - Service Discovery/Service Registery
 
-
 Service Discovery was created so that at minimal cost you can connect a new application to our existing environment. Using Service Discovery, we can maximally separate either a Docker container or a virtual service from the environment in which it is running.
 
 ![Alt ​​text](/img/micro-patterns/service-registery.png)

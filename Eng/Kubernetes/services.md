@@ -6,7 +6,7 @@ On all nodes:
 - kube-proxy (network resources) configures network rules on worker nodes.
 
 On master node:
-- API Server (service for communication of all nodes with master)
+- API Server (service for communication of all nodes with master by kubelet)
 - Scheduler (service for scheduling and load distribution between nodes)
 - Kube Controller Manager (controller of all pods in the cluster)
 - Cloud Controller Manager (controller of all pods with cloud)

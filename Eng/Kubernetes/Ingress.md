@@ -1,4 +1,4 @@
-##Ingress
+## Ingress
 
 Ingress allows you to configure routing rules for traffic from external sources to services within the cluster.
 

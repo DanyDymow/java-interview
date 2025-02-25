@@ -7,7 +7,7 @@ REST is literally “self-describing state transfer,” a style of communication
 
 ## Key Principles and Constraints of REST:
 
-###Stateless:
+### Stateless:
 In a RESTful system, each request from a client to a server must contain all the information needed to understand and process the request. The server should not store any client state between requests. This property makes REST services highly scalable, as they can be easily load-balanced.
 
 ### Client-Server Architecture:
@@ -40,6 +40,11 @@ RESTful APIs use standard HTTP methods to perform operations on resources:
 - PATCH: Partially update a resource. **IDEMPOTENT**
 ### HTTP Status Codes: 
 RESTful APIs use HTTP status codes to indicate the result of an operation. Common status codes include 200 (OK), 201 (Created), 204 (No Content), 400 (Bad Request), 404 (Not Found), and 500 (Internal Server Error).
+Info (100 – 199)
+Success ответы (200 – 299)
+Redirection (300 – 399)
+Client error (400 – 499)
+Server error (500 – 599)
 
 ### Representation: 
 Resources can have multiple representations (e.g., JSON, XML, HTML). Clients can request a specific representation using the Accept header, and servers can send the appropriate representation using the Content-Type header.
