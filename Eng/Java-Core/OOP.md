@@ -10,6 +10,15 @@ Allows to focus on high level functionality
 
 Allows us to use superclass with all methods and variable of it
 
+Relationship "is-a"
+
+Cat -> Animal
+
+vs  Composition
+
+Relationship "has-a"
+Car -> Engine
+
 ### Polymorphism
 
 Possibility to overload and override methods
